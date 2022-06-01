@@ -1,10 +1,9 @@
-package witkowski.mateusz.bookseat.initialization.domain;
+package pl.witkowski.zticache.initialization.domain;
 
 import com.opencsv.bean.CsvBindByName;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
-import witkowski.mateusz.bookseat.movie.domain.Category;
 
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -23,23 +22,16 @@ public class CsvMovie {
     private String director;
 
     @CsvBindByName
-    private Long duration;
-
-    @CsvBindByName
     private String production;
 
     @CsvBindByName
     private String premiere;
 
     @CsvBindByName
-    private String description;
-
-    @CsvBindByName
     private String categories;
 
-    public Set<Category> parseCategories() {
+    public Set<String> parseCategories() {
         return Arrays.stream(categories.split(","))
-                .map(Category::parseString)
                 .collect(Collectors.toSet());
     }
 

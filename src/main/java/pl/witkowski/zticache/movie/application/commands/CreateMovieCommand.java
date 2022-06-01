@@ -1,10 +1,8 @@
-package witkowski.mateusz.bookseat.movie.application.commands;
-
-import witkowski.mateusz.bookseat.movie.domain.Category;
+package pl.witkowski.zticache.movie.application.commands;
 
 import java.time.LocalDate;
 import java.util.Set;
 
-public record CreateMovieCommand(String title, String director, Long duration, String description,
-                                 LocalDate premiere, String production, Set<Category> categories) {
+public record CreateMovieCommand(String title, String director, LocalDate premiere, String production,
+                                 Set<String> categories) {
 }

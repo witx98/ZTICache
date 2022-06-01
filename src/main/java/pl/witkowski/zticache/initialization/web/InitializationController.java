@@ -1,11 +1,11 @@
-package witkowski.mateusz.bookseat.initialization.web;
+package pl.witkowski.zticache.initialization.web;
 
 
 import lombok.AllArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
-import witkowski.mateusz.bookseat.initialization.application.port.InitializationUseCase;
+import pl.witkowski.zticache.initialization.application.port.InitializationUseCase;
 
 @RestController
 @AllArgsConstructor

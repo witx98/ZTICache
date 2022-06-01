@@ -1,4 +1,4 @@
-package pl.witkowski.zticache.cache;
+package pl.witkowski.zticache.cache.customizers;
 
 import org.springframework.boot.autoconfigure.cache.CacheManagerCustomizer;
 import org.springframework.cache.concurrent.ConcurrentMapCacheManager;
