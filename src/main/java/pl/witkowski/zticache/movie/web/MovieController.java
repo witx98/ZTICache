@@ -19,7 +19,7 @@ import java.util.Optional;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/movies")
-@CacheConfig(cacheNames={"movies"})
+@CacheConfig(cacheNames = {"movies"})
 public class MovieController {
 
     private final MovieUseCase movieService;
@@ -49,7 +49,7 @@ public class MovieController {
 
     @GetMapping("/cachePut/limit")
     @ResponseStatus(HttpStatus.OK)
-    @CachePut(unless="#result.size() > 2")
+    @CachePut(unless = "#result.size() > 2")
     public List<MovieEntity> getCachePutLimitMovies() {
         log.info("invocation of method getCachePutLimitMovies");
         return movieService.getAll();
