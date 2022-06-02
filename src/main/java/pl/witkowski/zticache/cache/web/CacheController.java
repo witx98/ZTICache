@@ -29,15 +29,15 @@ public class CacheController {
     @DeleteMapping("/clear")
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void clearCache() {
-        log.info("invocation of method getCacheNames");
+        log.info("invocation of method clearCache");
         cacheManager.getCacheNames()
                 .forEach(cacheName -> Objects.requireNonNull(cacheManager.getCache(cacheName)).clear());
     }
 
-    @GetMapping
+    @GetMapping("/{cacheName}")
     @ResponseStatus(HttpStatus.OK)
-    public Cache getCache() {
+    public Cache getCache(@PathVariable String cacheName) {
         log.info("invocation of method getCache");
-        return cacheManager.getCache("movies");
+        return cacheManager.getCache(cacheName);
     }
 }
